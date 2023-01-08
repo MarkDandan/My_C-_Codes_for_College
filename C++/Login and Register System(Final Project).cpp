@@ -3,6 +3,7 @@
 #include <Windows.h>
 #include <fstream>
 using namespace std;
+
 void Register();
 void Login();
 bool IsloggedIn();
@@ -32,7 +33,7 @@ int main(){
     cout << "\t\t|===============================================|" << endl;
     cout << "\n\t\tEnter your choice: ";
     cin >> choice;
-
+    
     switch (choice) {
     case 1:
         loading();
@@ -166,7 +167,7 @@ void ForgotPass() {
     loading();
     main();
 }
-//------------------------------------------------------------------------------------
+//Under Construction
 void mainmenu() {
     int choice;
     cout << "\t\t__________________________________________________" << endl;
