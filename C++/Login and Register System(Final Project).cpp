@@ -24,14 +24,16 @@ int main(){
 
     int choice;
 
-    cout << "\t\t_________________________________________________" << endl;
-    cout << "\t\t|                   Main Page                   |" << endl;
-    cout << "\t\t|-----------------------------------------------|" << endl;
-    cout << "\t\t|1 :Register                                    |" << endl;
-    cout << "\t\t|2 :Login                                       |" << endl;
-    cout << "\t\t|3 :Forgot Password                             |" << endl;
-    cout << "\t\t|===============================================|" << endl;
-    cout << "\n\t\tEnter your choice: ";
+    cout << "\t\t\t_________________________________________________" << endl;
+    cout << "\t\t\t|                   Main Page                   |" << endl;
+    cout << "\t\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t\t|                                               |" << endl;
+    cout << "\t\t\t| 1 :Register                                   |" << endl;
+    cout << "\t\t\t| 2 :Login                                      |" << endl;
+    cout << "\t\t\t| 3 :Forgot Password                            |" << endl;
+    cout << "\t\t\t|                                               |" << endl;
+    cout << "\t\t\t|===============================================|" << endl;
+    cout << "\n\t\t\tEnter your choice: ";
     cin >> choice;
 
     switch (choice) {
@@ -49,9 +51,9 @@ int main(){
         break;
     default:
         loading();
-        cout << "\t\t|------------------------------------------------|" << endl;
-        cout << "\t\t|         You enter an invalid choice!           |" << endl;
-        cout << "\t\t|------------------------------------------------|" << endl;
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        cout << "\t\t\t|         You enter an invalid choice!           |" << endl;
+        cout << "\t\t\t|------------------------------------------------|" << endl;
         return 0;
     } 
 }
@@ -59,25 +61,44 @@ int main(){
 void Register() {
     string username, password;
 
-    cout << "\t\t|----------------------------------------------|" << endl;
-    cout << "\t\t|                   Register                   |" << endl;
-    cout << "\t\t|----------------------------------------------|" << endl;
+    cout << "\t\t\t|----------------------------------------------|" << endl;
+    cout << "\t\t\t|                   Register                   |" << endl;
+    cout << "\t\t\t|----------------------------------------------|" << endl;
 
-    cout << "\n\t\tEnter Username: ";
+    cout << "\n\t\t\tEnter Username: ";
     cin >> username;
 
-    cout << "\n\t\tEnter Password: ";
+    cout << "\n\t\t\tEnter Password: ";
     cin >> password;
 
     ifstream infile(username + ".txt");
     if (infile) {
         loading();
-        cout << "\t\t|------------------------------------------------|" << endl;
-        cout << "\t\t|             username already exist             |" << endl;
-        cout << "\t\t|------------------------------------------------|" << endl;
-        system("pause");
-        loading();
-        main();
+        int choice;
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        cout << "\t\t\t|             Username Already Exist             |" << endl;
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        cout << "\t\t\t|----------- Do You Want To Try Again? ----------|" << endl;
+        cout << "\t\t\t|       Enter 1 if YES and 0 for Main Page       |" << endl;
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        cout << "\t\t\tYour Choice: ";
+        cin >> choice;
+        switch (choice) {
+        case 1:
+            loading();
+            Register();
+            break;
+        case 0:
+            loading();
+            main();
+            break;
+        default:
+            loading();
+            cout << "\t\t\t|------------------------------------------------|" << endl;
+            cout << "\t\t\t|         You enter an invalid choice!           |" << endl;
+            cout << "\t\t\t|------------------------------------------------|" << endl;
+            return;
+        }
     }
     
     ofstream file;
@@ -86,9 +107,9 @@ void Register() {
     file.close();
     
     loading();
-    cout << "\t\t|-----------------------------------------------|" << endl;
-    cout << "\t\t|            Successfully Registered            |" << endl;
-    cout << "\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t\t|            Successfully Registered            |" << endl;
+    cout << "\t\t\t|-----------------------------------------------|" << endl;
     system("pause");
     loading();
     main();
@@ -99,12 +120,31 @@ void Login() {
 
     if (!status) {
         loading();
-        cout << "\t\t|-----------------------------------------------|" << endl;
-        cout << "\t\t|         Invalid Username or Password!         |" << endl;
-        cout << "\t\t|-----------------------------------------------|" << endl;
-        system("pause");
-        loading();    
-        main();
+        int choice;
+        cout << "\t\t\t|-----------------------------------------------|" << endl;
+        cout << "\t\t\t|         Invalid Username or Password!         |" << endl;
+        cout << "\t\t\t|-----------------------------------------------|" << endl;
+        cout << "\t\t\t|---------- Do You Want  To Try Again? ---------|" << endl;
+        cout << "\t\t\t|       Enter 1 if YES and 0 for Main Page      |" << endl;
+        cout << "\t\t\t|-----------------------------------------------|" << endl;
+        cout << "\t\t\tYour Choice: ";
+        cin >> choice;
+        switch (choice) {
+        case 1:
+            loading();
+            Login();
+            break;
+        case 0:
+            loading();
+            main();
+            break;
+        default:
+            loading();
+            cout << "\t\t\t|------------------------------------------------|" << endl;
+            cout << "\t\t\t|         You enter an invalid choice!           |" << endl;
+            cout << "\t\t\t|------------------------------------------------|" << endl;
+            return;
+        }
     }
     else {
         loading();
@@ -115,14 +155,14 @@ void Login() {
 bool IsloggedIn() {
     string username, password, un, pw;
 
-    cout << "\t\t|---------------------------------------------|" << endl;
-    cout << "\t\t|                    Login                    |" << endl;
-    cout << "\t\t|---------------------------------------------|" << endl;
+    cout << "\t\t\t|---------------------------------------------|" << endl;
+    cout << "\t\t\t|                    Login                    |" << endl;
+    cout << "\t\t\t|---------------------------------------------|" << endl;
 
-    cout << "\n\t\tEnter Username: ";
+    cout << "\n\t\t\tEnter Username: ";
     cin >> username;
 
-    cout << "\n\t\tEnter Password: ";
+    cout << "\n\t\t\tEnter Password: ";
     cin >> password;
 
     ifstream read(username + ".txt");
@@ -139,25 +179,44 @@ bool IsloggedIn() {
 void ForgotPass() {
     string username, password;
 
-    cout << "\t\t|-----------------------------------------------|" << endl;
-    cout << "\t\t|                 Forgot Password               |" << endl;
-    cout << "\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t\t|                 Forgot Password               |" << endl;
+    cout << "\t\t\t|-----------------------------------------------|" << endl;
 
-    cout << "\n\t\tEnter username :";
+    cout << "\n\t\t\tEnter username :";
     cin >> username;
 
-    cout << "\n\t\tEnter your new password: ";
+    cout << "\n\t\t\tEnter your new password: ";
     cin >> password;
 
     ifstream infile(username + ".txt");
     if (!(infile)) {
         loading();
-        cout << "\t\t|------------------------------------------------|" << endl;
-        cout << "\t\t|            Username does not exist!            |" << endl;
-        cout << "\t\t|------------------------------------------------|" << endl;
-        system("pause");
-        loading();
-        main();
+        int choice;
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        cout << "\t\t\t|            Username does not exist!            |" << endl;
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        cout << "\t\t\t|----------- Do You Want To Try Again? ----------|" << endl;
+        cout << "\t\t\t|       Enter 1 if YES and 0 for Main Page       |" << endl;
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        cout << "\t\t\tYour Choice: ";
+        cin >> choice;
+        switch (choice) {
+        case 1:
+            loading();
+            Register();
+            break;
+        case 0:
+            loading();
+            main();
+            break;
+        default:
+            loading();
+            cout << "\t\t\t|------------------------------------------------|" << endl;
+            cout << "\t\t\t|         You enter an invalid choice!           |" << endl;
+            cout << "\t\t\t|------------------------------------------------|" << endl;
+            return;
+        }
     }
 
     ofstream file;
@@ -166,9 +225,9 @@ void ForgotPass() {
     file.close();
 
     loading();
-    cout << "\t\t|------------------------------------------------|" << endl;
-    cout << "\t\t|        Successfully Change the Password        |" << endl;
-    cout << "\t\t|------------------------------------------------|" << endl;
+    cout << "\t\t\t|------------------------------------------------|" << endl;
+    cout << "\t\t\t|        Successfully Change the Password        |" << endl;
+    cout << "\t\t\t|------------------------------------------------|" << endl;
     system("pause");
     loading();
     main();
@@ -176,21 +235,21 @@ void ForgotPass() {
 
 void mainmenu() {
     int choice;
-    cout << "\t\t__________________________________________________" << endl;
-    cout << "\t\t|               Activities Archive               |" << endl;
-    cout << "\t\t|------------------------------------------------|" << endl;
-    cout << "\t\t|1. Display Hello World                          |" << endl;
-    cout << "\t\t|2. Display House                                |" << endl;
-    cout << "\t\t|3. Lower Number Identifier                      |" << endl;
-    cout << "\t\t|4. Higher Number Identifier                     |" << endl;
-    cout << "\t\t|5. Average Calculator with equivalent grade     |" << endl;
-    cout << "\t\t|6. Calculator                                   |" << endl;
-    cout << "\t\t|7. Increment looping                            |" << endl;
-    cout << "\t\t|8. Decrement looping                            |" << endl;
-    cout << "\t\t|9. Logout                                       |" << endl;
-    cout << "\t\t|================================================|" << endl;
+    cout << "\t\t\t__________________________________________________" << endl;
+    cout << "\t\t\t|               Activities Archive               |" << endl;
+    cout << "\t\t\t|------------------------------------------------|" << endl;
+    cout << "\t\t\t|1. Display Hello World                          |" << endl;
+    cout << "\t\t\t|2. Display House                                |" << endl;
+    cout << "\t\t\t|3. Lower Number Identifier                      |" << endl;
+    cout << "\t\t\t|4. Higher Number Identifier                     |" << endl;
+    cout << "\t\t\t|5. Average Calculator with equivalent grade     |" << endl;
+    cout << "\t\t\t|6. Calculator                                   |" << endl;
+    cout << "\t\t\t|7. Increment looping                            |" << endl;
+    cout << "\t\t\t|8. Decrement looping                            |" << endl;
+    cout << "\t\t\t|9. Logout                                       |" << endl;
+    cout << "\t\t\t|================================================|" << endl;
 
-    cout << "\n\t\tEnter your choice: ";
+    cout << "\n\t\t\tEnter your choice: ";
     cin >> choice;
 
     switch (choice) {
@@ -231,9 +290,9 @@ void mainmenu() {
         break;
     default:
         loading(); 
-        cout << "\t\t|------------------------------------------------|" << endl;
-        cout << "\t\t|         You enter an invalid choice!           |" << endl;
-        cout << "\t\t|------------------------------------------------|" << endl;
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        cout << "\t\t\t|         You enter an invalid choice!           |" << endl;
+        cout << "\t\t\t|------------------------------------------------|" << endl;
         system("pause");
         mainmenu();
     }
@@ -241,37 +300,37 @@ void mainmenu() {
 
 
 void helloworld() {
-    cout << "\t\t|------------------------------------------------|" << endl;
-    cout << "\t\t|                  Hello World!                  |" << endl;
-    cout << "\t\t|------------------------------------------------|" << endl;
+    cout << "\t\t\t|------------------------------------------------|" << endl;
+    cout << "\t\t\t|                  Hello World!                  |" << endl;
+    cout << "\t\t\t|------------------------------------------------|" << endl;
     system("pause");
    
 }
 
 void house() {
-    cout << "\t\t|-----------------------------------|" << endl;
-    cout << "\t\t|        ________________           |" << endl;
-    cout << "\t\t|       /\\***************\\          |" << endl;
-    cout << "\t\t|      //*\\***************\\         |" << endl;
-    cout << "\t\t|     //***\\***************\\        |" << endl;
-    cout << "\t\t|    //*****\\***************\\       |" << endl;
-    cout << "\t\t|   //*******\\***************\\      |" << endl;
-    cout << "\t\t|  //*********\\***************\\     |" << endl;
-    cout << "\t\t| //-----------\\---------------\\    |" << endl;
-    cout << "\t\t|  |           |    _______    |    |" << endl;
-    cout << "\t\t|  |   _____   |   |\\ _____\\   |    |" << endl;
-    cout << "\t\t|  |   |   |   |   | \\______\\  |    |" << endl;
-    cout << "\t\t|  |   |  o|   |   |________|  |    |" << endl;
-    cout << "\t\t|  |___|___|___|_______________|    |" << endl;
-    cout << "\t\t| /=============\\===============\\   |" << endl;
-    cout << "\t\t|-----------------------------------|" << endl;
+    cout << "\t\t\t|-----------------------------------|" << endl;
+    cout << "\t\t\t|        ________________           |" << endl;
+    cout << "\t\t\t|       /\\***************\\          |" << endl;
+    cout << "\t\t\t|      //*\\***************\\         |" << endl;
+    cout << "\t\t\t|     //***\\***************\\        |" << endl;
+    cout << "\t\t\t|    //*****\\***************\\       |" << endl;
+    cout << "\t\t\t|   //*******\\***************\\      |" << endl;
+    cout << "\t\t\t|  //*********\\***************\\     |" << endl;
+    cout << "\t\t\t| //-----------\\---------------\\    |" << endl;
+    cout << "\t\t\t|  |           |    _______    |    |" << endl;
+    cout << "\t\t\t|  |   _____   |   |\\ _____\\   |    |" << endl;
+    cout << "\t\t\t|  |   |   |   |   | \\______\\  |    |" << endl;
+    cout << "\t\t\t|  |   |  o|   |   |________|  |    |" << endl;
+    cout << "\t\t\t|  |___|___|___|_______________|    |" << endl;
+    cout << "\t\t\t| /=============\\===============\\   |" << endl;
+    cout << "\t\t\t|-----------------------------------|" << endl;
 }
 
 void lownum() {
 
-    cout << "\t\t|-----------------------------------------------|" << endl;
-    cout << "\t\t|            Find the Lowest Number             |" << endl;
-    cout << "\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t\t|            Find the Lowest Number             |" << endl;
+    cout << "\t\t\t|-----------------------------------------------|" << endl;
     
     int A, B, C, D;
     cout << "Enter a 1st number: ";
@@ -300,9 +359,9 @@ void lownum() {
 }
 
 void highnum() {
-    cout << "\t\t|-----------------------------------------------|" << endl;
-    cout << "\t\t|            Find the Lowest Number             |" << endl;
-    cout << "\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t\t|            Find the Lowest Number             |" << endl;
+    cout << "\t\t\t|-----------------------------------------------|" << endl;
 
     int A, B, C, D;
     cout << "Enter a 1st number: ";
@@ -331,9 +390,9 @@ void highnum() {
 }
 
 void avecal() {
-    cout << "\t\t|-----------------------------------------------|" << endl;
-    cout << "\t\t|              Average Calculator               |" << endl;
-    cout << "\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t\t|              Average Calculator               |" << endl;
+    cout << "\t\t\t|-----------------------------------------------|" << endl;
 
     double grd1, grd2, grd3, grd4, avg;
     int noofgrd = 4;
@@ -383,9 +442,9 @@ void avecal() {
 }
 
 void cal() {
-    cout << "\t\t|-----------------------------------------------|" << endl;
-    cout << "\t\t|                  Calculator                   |" << endl;
-    cout << "\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t\t|                  Calculator                   |" << endl;
+    cout << "\t\t\t|-----------------------------------------------|" << endl;
 
     double num1, num2;
     char op;
@@ -421,9 +480,9 @@ void cal() {
 }
 
 void increment() {
-    cout << "\t\t|-----------------------------------------------|" << endl;
-    cout << "\t\t|              Increment a Number               |" << endl;
-    cout << "\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t\t|              Increment a Number               |" << endl;
+    cout << "\t\t\t|-----------------------------------------------|" << endl;
 
     int num;
 
@@ -435,9 +494,9 @@ void increment() {
     }
 }
 void decrement() {
-    cout << "\t\t|-----------------------------------------------|" << endl;
-    cout << "\t\t|              Decrement a Number               |" << endl;
-    cout << "\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t\t|              Decrement a Number               |" << endl;
+    cout << "\t\t\t|-----------------------------------------------|" << endl;
 
     int num;
 
@@ -450,9 +509,9 @@ void decrement() {
 }
 void logout() {
     system("cls");
-    cout << "\t\t|--------------------------------------------|" << endl;
-    cout << "\t\t|                Logging out                 |" << endl;
-    cout << "\t\t|--------------------------------------------|" << endl;
+    cout << "\t\t\t|--------------------------------------------|" << endl;
+    cout << "\t\t\t|                Logging out                 |" << endl;
+    cout << "\t\t\t|--------------------------------------------|" << endl;
     Sleep(1000);
     loading();
     main();
@@ -461,7 +520,7 @@ void logout() {
 void loading() {
     system("cls");
     cout << "\n\n\n\t\t\t\t- Presented by Group 3 -\n\n";
-    cout << "\n\n\n\t\t\t\tPlease wait while loading\n\n";
+    cout << "\n\t\t\t\tPlease wait while loading\n\n";
     char a = 177, b = 219;
     cout << "\t\t\t\t";
     for (int i = 0; i <= 24; i++) {
@@ -471,7 +530,7 @@ void loading() {
     cout << "\t\t\t\t";
     for (int i = 0; i <= 23; i++)
     {
-        Sleep(25);
+        Sleep(50);
         cout << b;
     }
     system("cls");
