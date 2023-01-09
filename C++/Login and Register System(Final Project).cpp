@@ -33,7 +33,7 @@ int main(){
     cout << "\t\t|===============================================|" << endl;
     cout << "\n\t\tEnter your choice: ";
     cin >> choice;
-    
+
     switch (choice) {
     case 1:
         loading();
@@ -142,11 +142,12 @@ void ForgotPass() {
     cout << "\t\t|-----------------------------------------------|" << endl;
     cout << "\t\t|                 Forgot Password               |" << endl;
     cout << "\t\t|-----------------------------------------------|" << endl;
+
     cout << "\n\t\tEnter username :";
     cin >> username;
 
     cout << "\n\t\tEnter your new password: ";
-    cin >> password; 
+    cin >> password;
 
     ifstream infile(username + ".txt");
     if (!(infile)) {
@@ -165,9 +166,14 @@ void ForgotPass() {
     file.close();
 
     loading();
+    cout << "\t\t|------------------------------------------------|" << endl;
+    cout << "\t\t|        Successfully Change the Password        |" << endl;
+    cout << "\t\t|------------------------------------------------|" << endl;
+    system("pause");
+    loading();
     main();
 }
-//Under Construction
+
 void mainmenu() {
     int choice;
     cout << "\t\t__________________________________________________" << endl;
@@ -220,8 +226,7 @@ void mainmenu() {
         loading(); 
         decrement();
         break;
-    case 9:
-        loading(); 
+    case 9: 
         logout();
         break;
     default:
@@ -229,33 +234,45 @@ void mainmenu() {
         cout << "\t\t|------------------------------------------------|" << endl;
         cout << "\t\t|         You enter an invalid choice!           |" << endl;
         cout << "\t\t|------------------------------------------------|" << endl;
+        system("pause");
         mainmenu();
     }
 }
 
 
 void helloworld() {
-        cout << "Hello World!\n";
+    cout << "\t\t|------------------------------------------------|" << endl;
+    cout << "\t\t|                  Hello World!                  |" << endl;
+    cout << "\t\t|------------------------------------------------|" << endl;
+    system("pause");
+   
 }
 
 void house() {
-    cout << "        ________________           " << endl;
-    cout << "       /\\***************\\        " << endl;
-    cout << "      //*\\***************\\       " << endl;
-    cout << "     //***\\***************\\      " << endl;
-    cout << "    //*****\\***************\\     " << endl;
-    cout << "   //*******\\***************\\    " << endl;
-    cout << "  //*********\\***************\\   " << endl;
-    cout << " //-----------\\---------------\\  " << endl;
-    cout << "  |           |    _______    |    " << endl;
-    cout << "  |   _____   |   |\\ _____\\   |  " << endl;
-    cout << "  |   |   |   |   | \\______\\  |  " << endl;
-    cout << "  |   |  o|   |   |________|  |    " << endl;
-    cout << "  |___|___|___|_______________|    " << endl;
-    cout << " /=============\\===============\\ " << endl;
+    cout << "\t\t|-----------------------------------|" << endl;
+    cout << "\t\t|        ________________           |" << endl;
+    cout << "\t\t|       /\\***************\\          |" << endl;
+    cout << "\t\t|      //*\\***************\\         |" << endl;
+    cout << "\t\t|     //***\\***************\\        |" << endl;
+    cout << "\t\t|    //*****\\***************\\       |" << endl;
+    cout << "\t\t|   //*******\\***************\\      |" << endl;
+    cout << "\t\t|  //*********\\***************\\     |" << endl;
+    cout << "\t\t| //-----------\\---------------\\    |" << endl;
+    cout << "\t\t|  |           |    _______    |    |" << endl;
+    cout << "\t\t|  |   _____   |   |\\ _____\\   |    |" << endl;
+    cout << "\t\t|  |   |   |   |   | \\______\\  |    |" << endl;
+    cout << "\t\t|  |   |  o|   |   |________|  |    |" << endl;
+    cout << "\t\t|  |___|___|___|_______________|    |" << endl;
+    cout << "\t\t| /=============\\===============\\   |" << endl;
+    cout << "\t\t|-----------------------------------|" << endl;
 }
 
 void lownum() {
+
+    cout << "\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t|            Find the Lowest Number             |" << endl;
+    cout << "\t\t|-----------------------------------------------|" << endl;
+    
     int A, B, C, D;
     cout << "Enter a 1st number: ";
     cin >> A;
@@ -283,6 +300,10 @@ void lownum() {
 }
 
 void highnum() {
+    cout << "\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t|            Find the Lowest Number             |" << endl;
+    cout << "\t\t|-----------------------------------------------|" << endl;
+
     int A, B, C, D;
     cout << "Enter a 1st number: ";
     cin >> A;
@@ -310,6 +331,10 @@ void highnum() {
 }
 
 void avecal() {
+    cout << "\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t|              Average Calculator               |" << endl;
+    cout << "\t\t|-----------------------------------------------|" << endl;
+
     double grd1, grd2, grd3, grd4, avg;
     int noofgrd = 4;
     cout << "Enter your 1st Grade: ";
@@ -358,33 +383,37 @@ void avecal() {
 }
 
 void cal() {
-    int A, B;
+    cout << "\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t|                  Calculator                   |" << endl;
+    cout << "\t\t|-----------------------------------------------|" << endl;
+
+    double num1, num2;
     char op;
     double result;
 
     cout << "Input the 1st value: ";
-    cin >> A;
+    cin >> num1;
 
     cout << "Enter the operator to use: ";
     cin >> op;
 
     cout << "Input the 2nd Value: ";
-    cin >> B;
+    cin >> num2;
 
     if (op == '+') {
-        result = A + B;
+        result = num1 + num2;
         cout << "\nSum: " << result << endl;
     }
     else if (op == '-') {
-        result = A - B;
+        result = num1 - num2;
         cout << "\nDifference: " << result << endl;
     }
     else if (op == '*') {
-        result = A * B;
+        result = num1 * num2;
         cout << "\nProduct: " << result << endl;
     }
     else if (op == '/') {
-        result = (double(A) / B);
+        result = num1 / num2;
         cout << "\nQuotient: " << result << endl;
     }
     else
@@ -392,6 +421,10 @@ void cal() {
 }
 
 void increment() {
+    cout << "\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t|              Increment a Number               |" << endl;
+    cout << "\t\t|-----------------------------------------------|" << endl;
+
     int num;
 
     cout << "Enter a number: ";
@@ -402,6 +435,10 @@ void increment() {
     }
 }
 void decrement() {
+    cout << "\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t|              Decrement a Number               |" << endl;
+    cout << "\t\t|-----------------------------------------------|" << endl;
+
     int num;
 
     cout << "Enter a number: ";
@@ -412,11 +449,18 @@ void decrement() {
     }
 }
 void logout() {
-
+    system("cls");
+    cout << "\t\t|--------------------------------------------|" << endl;
+    cout << "\t\t|                Logging out                 |" << endl;
+    cout << "\t\t|--------------------------------------------|" << endl;
+    Sleep(1000);
+    loading();
+    main();
 }
 
 void loading() {
     system("cls");
+    cout << "\n\n\n\t\t\t\t- Presented by Group 3 -\n\n";
     cout << "\n\n\n\t\t\t\tPlease wait while loading\n\n";
     char a = 177, b = 219;
     cout << "\t\t\t\t";
