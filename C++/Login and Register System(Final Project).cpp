@@ -2,6 +2,7 @@
 #include <string>
 #include <Windows.h>
 #include <fstream>
+
 using namespace std;
 
 void Register();
@@ -21,7 +22,6 @@ void logout();
 void loading();
 
 int main(){
-
     int choice;
 
     cout << "\t\t\t_________________________________________________" << endl;
@@ -583,7 +583,6 @@ void avecal() {
         cout << "\t\t\t|------------------------------------------------|" << endl;
         return;
     }
-
 }
 
 void cal() {
@@ -623,7 +622,6 @@ void cal() {
     else
         cout << "\n\t\t\tInvalid operator\n";
 
-    
     Sleep(1000);
 
     int choice;
@@ -651,7 +649,6 @@ void cal() {
         cout << "\t\t\t|------------------------------------------------|" << endl;
         return;
     }
-
 }
 
 void increment() {
@@ -697,6 +694,7 @@ void increment() {
         return;
     }
 }
+
 void decrement() {
     cout << "\t\t\t|-----------------------------------------------|" << endl;
     cout << "\t\t\t|              Decrement a Number               |" << endl;
@@ -741,8 +739,8 @@ void decrement() {
         return;
     }
 }
-void logout() {
-    
+
+void logout() {   
     system("cls");
     cout << "\n\n\n\t\t\t\t- Presented by Group 3 -\n\n";
     cout << "\t\t\t|--------------------------------------------|" << endl;
