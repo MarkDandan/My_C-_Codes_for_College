@@ -78,6 +78,7 @@ void Register() {
         cout << "\t\t\t|------------------------------------------------|" << endl;
         cout << "\t\t\t|             Username Already Exist             |" << endl;
         cout << "\t\t\t|------------------------------------------------|" << endl;
+        Sleep(1000);
         cout << "\t\t\t|----------- Do You Want To Try Again? ----------|" << endl;
         cout << "\t\t\t|       Enter 1 if YES and 0 for Main Page       |" << endl;
         cout << "\t\t\t|------------------------------------------------|" << endl;
@@ -124,6 +125,7 @@ void Login() {
         cout << "\t\t\t|-----------------------------------------------|" << endl;
         cout << "\t\t\t|         Invalid Username or Password!         |" << endl;
         cout << "\t\t\t|-----------------------------------------------|" << endl;
+        Sleep(1000);
         cout << "\t\t\t|---------- Do You Want  To Try Again? ---------|" << endl;
         cout << "\t\t\t|       Enter 1 if YES and 0 for Main Page      |" << endl;
         cout << "\t\t\t|-----------------------------------------------|" << endl;
@@ -196,6 +198,7 @@ void ForgotPass() {
         cout << "\t\t\t|------------------------------------------------|" << endl;
         cout << "\t\t\t|            Username does not exist!            |" << endl;
         cout << "\t\t\t|------------------------------------------------|" << endl;
+        Sleep(1000);
         cout << "\t\t\t|----------- Do You Want To Try Again? ----------|" << endl;
         cout << "\t\t\t|       Enter 1 if YES and 0 for Main Page       |" << endl;
         cout << "\t\t\t|------------------------------------------------|" << endl;
@@ -211,7 +214,6 @@ void ForgotPass() {
             main();
             break;
         default:
-            loading();
             cout << "\t\t\t|------------------------------------------------|" << endl;
             cout << "\t\t\t|         You enter an invalid choice!           |" << endl;
             cout << "\t\t\t|------------------------------------------------|" << endl;
@@ -303,8 +305,34 @@ void helloworld() {
     cout << "\t\t\t|------------------------------------------------|" << endl;
     cout << "\t\t\t|                  Hello World!                  |" << endl;
     cout << "\t\t\t|------------------------------------------------|" << endl;
-    system("pause");
-   
+
+    Sleep(1000);
+
+    int choice;
+    cout << "\n\t\t\t|------------------------------------------------|";
+    cout << "\n\t\t\t| Do you want to return to the Activity Archive? |";
+    cout << "\n\t\t\t|       Press 1 if YES and ANY KEY to Exit       |";
+    cout << "\n\t\t\t|------------------------------------------------|";
+    cout << "\n\t\t\tYour Choice: ";
+    cin >> choice;
+    switch (choice) {
+    case 1:
+        loading();
+        mainmenu();
+        break;
+    default:
+        loading();
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        cout << "\t\t\t|         This is Presented by Group 3           |" << endl;
+        cout << "\t\t\t|                                                |" << endl;
+        cout << "\t\t\t|              Mark Daniel Estorba               |" << endl;
+        cout << "\t\t\t|                 Janryl Canaway                 |" << endl;
+        cout << "\t\t\t|                  Lance Boco                    |" << endl;
+        cout << "\t\t\t|             Laurence Lingcopenes               |" << endl;
+        cout << "\t\t\t|                 Israel Berina                  |" << endl;
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        return;
+    }
 }
 
 void house() {
@@ -324,6 +352,34 @@ void house() {
     cout << "\t\t\t|  |___|___|___|_______________|    |" << endl;
     cout << "\t\t\t| /=============\\===============\\   |" << endl;
     cout << "\t\t\t|-----------------------------------|" << endl;
+
+    Sleep(1000);
+
+    int choice;
+    cout << "\n\t\t|------------------------------------------------|";
+    cout << "\n\t\t| Do you want to return to the Activity Archive? |";
+    cout << "\n\t\t|       Press 1 if YES and ANY KEY to Exit       |";
+    cout << "\n\t\t|------------------------------------------------|";
+    cout << "\n\t\tYour Choice: ";
+    cin >> choice;
+    switch (choice) {
+    case 1:
+        loading();
+        mainmenu();
+        break;
+    default:
+        loading();
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        cout << "\t\t\t|         This is Presented by Group 3           |" << endl;
+        cout << "\t\t\t|                                                |" << endl;
+        cout << "\t\t\t|              Mark Daniel Estorba               |" << endl;
+        cout << "\t\t\t|                 Janryl Canaway                 |" << endl;
+        cout << "\t\t\t|                  Lance Boco                    |" << endl;
+        cout << "\t\t\t|             Laurence Lingcopenes               |" << endl;
+        cout << "\t\t\t|                 Israel Berina                  |" << endl;
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        return;
+    }
 }
 
 void lownum() {
@@ -333,29 +389,59 @@ void lownum() {
     cout << "\t\t\t|-----------------------------------------------|" << endl;
     
     int A, B, C, D;
-    cout << "Enter a 1st number: ";
+    cout << "\n\t\t\tEnter a 1st number: ";
     cin >> A;
 
-    cout << "Enter a 2nd number: ";
+    cout << "\t\t\tEnter a 2nd number: ";
     cin >> B;
 
-    cout << "Enter a 3rd number: ";
+    cout << "\t\t\tEnter a 3rd number: ";
     cin >> C;
 
-    cout << "Enter a 4th number: ";
+    cout << "\t\t\tEnter a 4th number: ";
     cin >> D;
 
-    if (A < B && A < C && A < D) {
-        cout << endl << A << " IS THE LOWEST NUMBER\n";
+    cout << "\n\t\t\t";
+
+    if (A <= B && A <= C && A <= D) {
+        cout << A << " IS THE LOWEST NUMBER\n";
     }
-    else if (B < A && B < C && B < D) {
-        cout << endl << B << " IS THE LOWEST NUMBER\n";
+    else if (B <= A && B <= C && B <= D) {
+        cout  << B << " IS THE LOWEST NUMBER\n";
     }
-    else if (C < A && C < B && C < D) {
-        cout << endl << C << " IS THE LOWEST NUMBER\n";
+    else if (C <= A && C <= B && C <= D) {
+        cout << C << " IS THE LOWEST NUMBER\n";
     }
     else
-        cout << endl << D << " IS THE LOWEST NUMBER\n";
+        cout  << D << " IS THE LOWEST NUMBER\n";
+
+    Sleep(1000);
+
+    int choice;
+    cout << "\n\t\t\t|------------------------------------------------|";
+    cout << "\n\t\t\t| Do you want to return to the Activity Archive? |";
+    cout << "\n\t\t\t|       Press 1 if YES and ANY KEY to Exit       |";
+    cout << "\n\t\t\t|------------------------------------------------|";
+    cout << "\n\t\t\tYour Choice: ";
+    cin >> choice;
+    switch (choice) {
+    case 1:
+        loading();
+        mainmenu();
+        break;
+    default:
+        loading();
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        cout << "\t\t\t|         This is Presented by Group 3           |" << endl;
+        cout << "\t\t\t|                                                |" << endl;
+        cout << "\t\t\t|              Mark Daniel Estorba               |" << endl;
+        cout << "\t\t\t|                 Janryl Canaway                 |" << endl;
+        cout << "\t\t\t|                  Lance Boco                    |" << endl;
+        cout << "\t\t\t|             Laurence Lingcopenes               |" << endl;
+        cout << "\t\t\t|                 Israel Berina                  |" << endl;
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        return;
+    }
 }
 
 void highnum() {
@@ -364,29 +450,59 @@ void highnum() {
     cout << "\t\t\t|-----------------------------------------------|" << endl;
 
     int A, B, C, D;
-    cout << "Enter a 1st number: ";
+    cout << "\n\t\t\tEnter a 1st number: ";
     cin >> A;
 
-    cout << "Enter a 2nd number: ";
+    cout << "\t\t\tEnter a 2nd number: ";
     cin >> B;
 
-    cout << "Enter a 3rd number: ";
+    cout << "\t\t\tEnter a 3rd number: ";
     cin >> C;
 
-    cout << "Enter a 4th number: ";
+    cout << "\t\t\tEnter a 4th number: ";
     cin >> D;
 
-    if (A > B && A > C && A > D) {
-        cout << endl << A << " IS THE HIGHEST NUMBER\n";
+    cout << "\n\t\t\t";
+
+    if (A >= B && A >= C && A >= D) {
+        cout << A << " IS THE HIGHEST NUMBER\n";
     }
-    else if (B > A && B > C && B > D) {
-        cout << endl << B << " IS THE HIGHEST NUMBER\n";
+    else if (B >= A && B >= C && B >= D) {
+        cout << B << " IS THE HIGHEST NUMBER\n";
     }
-    else if (C > A && C > B && C > D) {
-        cout << endl << C << " IS THE HIGHEST NUMBER\n";
+    else if (C >= A && C >= B && C >= D) {
+        cout << C << " IS THE HIGHEST NUMBER\n";
     }
     else
-        cout << endl << D << " IS THE HIGHEST NUMBER\n";
+        cout << D << " IS THE HIGHEST NUMBER\n";
+
+    Sleep(1000);
+
+    int choice;
+    cout << "\n\t\t\t|------------------------------------------------|";
+    cout << "\n\t\t\t| Do you want to return to the Activity Archive? |";
+    cout << "\n\t\t\t|       Press 1 if YES and ANY KEY to Exit       |";
+    cout << "\n\t\t\t|------------------------------------------------|";
+    cout << "\n\t\t\tYour Choice: ";
+    cin >> choice;
+    switch (choice) {
+    case 1:
+        loading();
+        mainmenu();
+        break;
+    default:
+        loading();
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        cout << "\t\t\t|         This is Presented by Group 3           |" << endl;
+        cout << "\t\t\t|                                                |" << endl;
+        cout << "\t\t\t|              Mark Daniel Estorba               |" << endl;
+        cout << "\t\t\t|                 Janryl Canaway                 |" << endl;
+        cout << "\t\t\t|                  Lance Boco                    |" << endl;
+        cout << "\t\t\t|             Laurence Lingcopenes               |" << endl;
+        cout << "\t\t\t|                 Israel Berina                  |" << endl;
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        return;
+    }
 }
 
 void avecal() {
@@ -396,49 +512,78 @@ void avecal() {
 
     double grd1, grd2, grd3, grd4, avg;
     int noofgrd = 4;
-    cout << "Enter your 1st Grade: ";
+    cout << "\n\t\t\tEnter your 1st Grade: ";
     cin >> grd1;
 
-    cout << "Enter your 2nd Grade: ";
+    cout << "\t\t\tEnter your 2nd Grade: ";
     cin >> grd2;
 
-    cout << "Enter your 3rd Grade: ";
+    cout << "\t\t\tEnter your 3rd Grade: ";
     cin >> grd3;
 
-    cout << "Enter your 4th Grade: ";
+    cout << "\t\t\tEnter your 4th Grade: ";
     cin >> grd4;
 
     avg = (grd1 + grd2 + grd3 + grd4) / noofgrd;
 
     if (avg >= 98) {
-        cout << "\nYour average is " << avg << " and is equal to 1.00\n";
+        cout << "\n\t\t\tYour average is " << avg << " and is equal to 1.00\n";
     }
     else if (avg >= 95) {
-        cout << "\nYour average is " << avg << " and is equal to 1.25\n";
+        cout << "\n\t\t\tYour average is " << avg << " and is equal to 1.25\n";
     }
     else if (avg >= 91) {
-        cout << "\nYour average is " << avg << " and is equal to 1.50\n";
+        cout << "\n\t\t\tYour average is " << avg << " and is equal to 1.50\n";
     }
     else if (avg >= 88) {
-        cout << "\nYour average is " << avg << " and is equal to 1.75\n";
+        cout << "\n\t\t\tYour average is " << avg << " and is equal to 1.75\n";
     }
     else if (avg >= 85) {
-        cout << "\nYour average is " << avg << " and is equal to 2.00\n";
+        cout << "\n\t\t\tYour average is " << avg << " and is equal to 2.00\n";
     }
     else if (avg >= 82) {
-        cout << "\nYour average is " << avg << " and is equal to 2.25\n";
+        cout << "\n\t\t\tYour average is " << avg << " and is equal to 2.25\n";
     }
     else if (avg >= 79) {
-        cout << "\nYour average is " << avg << " and is equal to 2.50\n";
+        cout << "\n\t\t\tYour average is " << avg << " and is equal to 2.50\n";
     }
     else if (avg >= 76) {
-        cout << "\nYour average is " << avg << " and is equal to 2.75\n";
+        cout << "\n\t\t\tYour average is " << avg << " and is equal to 2.75\n";
     }
     else if (avg == 75) {
-        cout << "\nYour average is " << avg << " and is equal to 3.00\n";
+        cout << "\n\t\t\tYour average is " << avg << " and is equal to 3.00\n";
     }
     else
-        cout << "\nYour average is " << avg << " and is equal to 5.00\n";
+        cout << "\n\t\t\tYour average is " << avg << " and is equal to 5.00\n";
+
+    Sleep(1000);
+
+    int choice;
+    cout << "\n\t\t\t|------------------------------------------------|";
+    cout << "\n\t\t\t| Do you want to return to the Activity Archive? |";
+    cout << "\n\t\t\t|       Press 1 if YES and ANY KEY to Exit       |";
+    cout << "\n\t\t\t|------------------------------------------------|";
+    cout << "\n\t\t\tYour Choice: ";
+    cin >> choice;
+    switch (choice) {
+    case 1:
+        loading();
+        mainmenu();
+        break;
+    default:
+        loading();
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        cout << "\t\t\t|         This is Presented by Group 3           |" << endl;
+        cout << "\t\t\t|                                                |" << endl;
+        cout << "\t\t\t|              Mark Daniel Estorba               |" << endl;
+        cout << "\t\t\t|                 Janryl Canaway                 |" << endl;
+        cout << "\t\t\t|                  Lance Boco                    |" << endl;
+        cout << "\t\t\t|             Laurence Lingcopenes               |" << endl;
+        cout << "\t\t\t|                 Israel Berina                  |" << endl;
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        return;
+    }
+
 }
 
 void cal() {
@@ -450,70 +595,173 @@ void cal() {
     char op;
     double result;
 
-    cout << "Input the 1st value: ";
+    cout << "\n\t\t\tInput the 1st value: ";
     cin >> num1;
 
-    cout << "Enter the operator to use: ";
+    cout << "\t\t\tEnter the operator to use: ";
     cin >> op;
 
-    cout << "Input the 2nd Value: ";
+    cout << "\t\t\tInput the 2nd Value: ";
     cin >> num2;
 
     if (op == '+') {
         result = num1 + num2;
-        cout << "\nSum: " << result << endl;
+        cout << "\n\t\t\tSum: " << result << endl;
     }
     else if (op == '-') {
         result = num1 - num2;
-        cout << "\nDifference: " << result << endl;
+        cout << "\n\t\t\tDifference: " << result << endl;
     }
     else if (op == '*') {
         result = num1 * num2;
-        cout << "\nProduct: " << result << endl;
+        cout << "\n\t\t\tProduct: " << result << endl;
     }
     else if (op == '/') {
         result = num1 / num2;
-        cout << "\nQuotient: " << result << endl;
+        cout << "\n\t\t\tQuotient: " << result << endl;
     }
     else
-        cout << "\nInvalid operator\n";
+        cout << "\n\t\t\tInvalid operator\n";
+
+    
+    Sleep(1000);
+
+    int choice;
+    cout << "\n\t\t\t|------------------------------------------------|";
+    cout << "\n\t\t\t| Do you want to return to the Activity Archive? |";
+    cout << "\n\t\t\t|       Press 1 if YES and ANY KEY to Exit       |";
+    cout << "\n\t\t\t|------------------------------------------------|";
+    cout << "\n\t\t\tYour Choice: ";
+    cin >> choice;
+    switch (choice) {
+    case 1:
+        loading();
+        mainmenu();
+        break;
+    default:
+        loading();
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        cout << "\t\t\t|         This is Presented by Group 3           |" << endl;
+        cout << "\t\t\t|                                                |" << endl;
+        cout << "\t\t\t|              Mark Daniel Estorba               |" << endl;
+        cout << "\t\t\t|                 Janryl Canaway                 |" << endl;
+        cout << "\t\t\t|                  Lance Boco                    |" << endl;
+        cout << "\t\t\t|             Laurence Lingcopenes               |" << endl;
+        cout << "\t\t\t|                 Israel Berina                  |" << endl;
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        return;
+    }
+
 }
 
 void increment() {
     cout << "\t\t\t|-----------------------------------------------|" << endl;
     cout << "\t\t\t|              Increment a Number               |" << endl;
     cout << "\t\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t  Print out every number from 0 to the number of your choice" << endl;
 
     int num;
 
-    cout << "Enter a number: ";
+    cout << "\n\t\t\tEnter a number: ";
     cin >> num;
     
     for (int i = 0; i <= num; i++) {
-        cout << i << endl;
+        cout << "\t\t\t" << i << endl;
+    }
+
+    Sleep(1000);
+
+    int choice;
+    cout << "\n\t\t\t|------------------------------------------------|";
+    cout << "\n\t\t\t| Do you want to return to the Activity Archive? |";
+    cout << "\n\t\t\t|       Press 1 if YES and ANY KEY to Exit       |";
+    cout << "\n\t\t\t|------------------------------------------------|";
+    cout << "\n\t\t\tYour Choice: ";
+    cin >> choice;
+    switch (choice) {
+    case 1:
+        loading();
+        mainmenu();
+        break;
+    default:
+        loading();
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        cout << "\t\t\t|         This is Presented by Group 3           |" << endl;
+        cout << "\t\t\t|                                                |" << endl;
+        cout << "\t\t\t|              Mark Daniel Estorba               |" << endl;
+        cout << "\t\t\t|                 Janryl Canaway                 |" << endl;
+        cout << "\t\t\t|                  Lance Boco                    |" << endl;
+        cout << "\t\t\t|             Laurence Lingcopenes               |" << endl;
+        cout << "\t\t\t|                 Israel Berina                  |" << endl;
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        return;
     }
 }
 void decrement() {
     cout << "\t\t\t|-----------------------------------------------|" << endl;
     cout << "\t\t\t|              Decrement a Number               |" << endl;
     cout << "\t\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t  Print out every number from the number of your choice to 0" << endl;
 
     int num;
 
-    cout << "Enter a number: ";
+    cout << "\n\t\t\tEnter a number: ";
     cin >> num;
     while (num >= 0){
-        cout << num << endl;
+        
+        cout << "\t\t\t" << num << endl;
         num--;
+    }
+
+    Sleep(1000);
+
+    int choice;
+    cout << "\n\t\t\t|------------------------------------------------|";
+    cout << "\n\t\t\t| Do you want to return to the Activity Archive? |";
+    cout << "\n\t\t\t|       Press 1 if YES and ANY KEY to Exit       |";
+    cout << "\n\t\t\t|------------------------------------------------|";
+    cout << "\n\t\t\tYour Choice: ";
+    cin >> choice;
+    switch (choice) {
+    case 1:
+        loading();
+        mainmenu();
+        break;
+    default:
+        loading();
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        cout << "\t\t\t|         This is Presented by Group 3           |" << endl;
+        cout << "\t\t\t|                                                |" << endl;
+        cout << "\t\t\t|              Mark Daniel Estorba               |" << endl;
+        cout << "\t\t\t|                 Janryl Canaway                 |" << endl;
+        cout << "\t\t\t|                  Lance Boco                    |" << endl;
+        cout << "\t\t\t|             Laurence Lingcopenes               |" << endl;
+        cout << "\t\t\t|                 Israel Berina                  |" << endl;
+        cout << "\t\t\t|------------------------------------------------|" << endl;
+        return;
     }
 }
 void logout() {
+    
     system("cls");
+    cout << "\n\n\n\t\t\t\t- Presented by Group 3 -\n\n";
     cout << "\t\t\t|--------------------------------------------|" << endl;
     cout << "\t\t\t|                Logging out                 |" << endl;
-    cout << "\t\t\t|--------------------------------------------|" << endl;
-    Sleep(1000);
-    loading();
+    cout << "\t\t\t|--------------------------------------------|";
+    cout << "\n\t\t\t\tPlease wait while loading\n\n";
+    char a = 177, b = 219;
+    cout << "\t\t\t\t";
+    for (int i = 0; i <= 24; i++) {
+        cout << a;
+    }
+    cout << "\r";
+    cout << "\t\t\t\t";
+    for (int i = 0; i <= 23; i++)
+    {
+        Sleep(50);
+        cout << b;
+    }
+    system("cls");
     main();
 }
 
