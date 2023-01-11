@@ -9,7 +9,7 @@ void Register();
 void Login();
 bool IsloggedIn();
 void ForgotPass();
-void mainmenu();
+void archive();
 void helloworld();
 void house();
 void lownum();
@@ -150,7 +150,7 @@ void Login() {
     }
     else {
         loading();
-        mainmenu();
+        archive();
     }
 }
 
@@ -179,7 +179,7 @@ bool IsloggedIn() {
 }
 
 void ForgotPass() {
-    string username, password;
+    string username, newpassword;
 
     cout << "\t\t\t|-----------------------------------------------|" << endl;
     cout << "\t\t\t|                 Forgot Password               |" << endl;
@@ -189,7 +189,7 @@ void ForgotPass() {
     cin >> username;
 
     cout << "\n\t\t\tEnter your new password: ";
-    cin >> password;
+    cin >> newpassword;
 
     ifstream infile(username + ".txt");
     if (!(infile)) {
@@ -223,7 +223,7 @@ void ForgotPass() {
 
     ofstream file;
     file.open(username + ".txt");
-    file << username << endl << password;
+    file << username << endl << newpassword;
     file.close();
 
     loading();
@@ -235,7 +235,7 @@ void ForgotPass() {
     main();
 }
 
-void mainmenu() {
+void archive() {
     int choice;
     cout << "\t\t\t__________________________________________________" << endl;
     cout << "\t\t\t|               Activities Archive               |" << endl;
@@ -296,7 +296,7 @@ void mainmenu() {
         cout << "\t\t\t|         You enter an invalid choice!           |" << endl;
         cout << "\t\t\t|------------------------------------------------|" << endl;
         system("pause");
-        mainmenu();
+        archive();
     }
 }
 
@@ -308,17 +308,17 @@ void helloworld() {
 
     Sleep(1000);
 
-    int choice;
+    int input;
     cout << "\n\t\t\t|------------------------------------------------|";
     cout << "\n\t\t\t| Do you want to return to the Activity Archive? |";
     cout << "\n\t\t\t|       Press 1 if YES and ANY KEY to Exit       |";
     cout << "\n\t\t\t|------------------------------------------------|";
     cout << "\n\t\t\tYour Choice: ";
-    cin >> choice;
-    switch (choice) {
+    cin >> input;
+    switch (input) {
     case 1:
         loading();
-        mainmenu();
+        archive();
         break;
     default:
         loading();
@@ -355,17 +355,17 @@ void house() {
 
     Sleep(1000);
 
-    int choice;
+    int input;
     cout << "\n\t\t|------------------------------------------------|";
     cout << "\n\t\t| Do you want to return to the Activity Archive? |";
     cout << "\n\t\t|       Press 1 if YES and ANY KEY to Exit       |";
     cout << "\n\t\t|------------------------------------------------|";
     cout << "\n\t\tYour Choice: ";
-    cin >> choice;
-    switch (choice) {
+    cin >> input;
+    switch (input) {
     case 1:
         loading();
-        mainmenu();
+        archive();
         break;
     default:
         loading();
@@ -417,17 +417,17 @@ void lownum() {
 
     Sleep(1000);
 
-    int choice;
+    int input;
     cout << "\n\t\t\t|------------------------------------------------|";
     cout << "\n\t\t\t| Do you want to return to the Activity Archive? |";
     cout << "\n\t\t\t|       Press 1 if YES and ANY KEY to Exit       |";
     cout << "\n\t\t\t|------------------------------------------------|";
     cout << "\n\t\t\tYour Choice: ";
-    cin >> choice;
-    switch (choice) {
+    cin >> input;
+    switch (input) {
     case 1:
         loading();
-        mainmenu();
+        archive();
         break;
     default:
         loading();
@@ -478,17 +478,17 @@ void highnum() {
 
     Sleep(1000);
 
-    int choice;
+    int input;
     cout << "\n\t\t\t|------------------------------------------------|";
     cout << "\n\t\t\t| Do you want to return to the Activity Archive? |";
     cout << "\n\t\t\t|       Press 1 if YES and ANY KEY to Exit       |";
     cout << "\n\t\t\t|------------------------------------------------|";
     cout << "\n\t\t\tYour Choice: ";
-    cin >> choice;
-    switch (choice) {
+    cin >> input;
+    switch (input) {
     case 1:
         loading();
-        mainmenu();
+        archive();
         break;
     default:
         loading();
@@ -558,17 +558,17 @@ void avecal() {
 
     Sleep(1000);
 
-    int choice;
+    int input;
     cout << "\n\t\t\t|------------------------------------------------|";
     cout << "\n\t\t\t| Do you want to return to the Activity Archive? |";
     cout << "\n\t\t\t|       Press 1 if YES and ANY KEY to Exit       |";
     cout << "\n\t\t\t|------------------------------------------------|";
     cout << "\n\t\t\tYour Choice: ";
-    cin >> choice;
-    switch (choice) {
+    cin >> input;
+    switch (input) {
     case 1:
         loading();
-        mainmenu();
+        archive();
         break;
     default:
         loading();
@@ -624,17 +624,17 @@ void cal() {
 
     Sleep(1000);
 
-    int choice;
+    int input;
     cout << "\n\t\t\t|------------------------------------------------|";
     cout << "\n\t\t\t| Do you want to return to the Activity Archive? |";
     cout << "\n\t\t\t|       Press 1 if YES and ANY KEY to Exit       |";
     cout << "\n\t\t\t|------------------------------------------------|";
     cout << "\n\t\t\tYour Choice: ";
-    cin >> choice;
-    switch (choice) {
+    cin >> input;
+    switch (input) {
     case 1:
         loading();
-        mainmenu();
+        archive();
         break;
     default:
         loading();
@@ -668,17 +668,17 @@ void increment() {
 
     Sleep(1000);
 
-    int choice;
+    int input;
     cout << "\n\t\t\t|------------------------------------------------|";
     cout << "\n\t\t\t| Do you want to return to the Activity Archive? |";
     cout << "\n\t\t\t|       Press 1 if YES and ANY KEY to Exit       |";
     cout << "\n\t\t\t|------------------------------------------------|";
     cout << "\n\t\t\tYour Choice: ";
-    cin >> choice;
-    switch (choice) {
+    cin >> input;
+    switch (input) {
     case 1:
         loading();
-        mainmenu();
+        archive();
         break;
     default:
         loading();
@@ -713,17 +713,17 @@ void decrement() {
 
     Sleep(1000);
 
-    int choice;
+    int input;
     cout << "\n\t\t\t|------------------------------------------------|";
     cout << "\n\t\t\t| Do you want to return to the Activity Archive? |";
     cout << "\n\t\t\t|       Press 1 if YES and ANY KEY to Exit       |";
     cout << "\n\t\t\t|------------------------------------------------|";
     cout << "\n\t\t\tYour Choice: ";
-    cin >> choice;
-    switch (choice) {
+    cin >> input;
+    switch (input) {
     case 1:
         loading();
-        mainmenu();
+        archive();
         break;
     default:
         loading();
@@ -742,7 +742,7 @@ void decrement() {
 
 void logout() {   
     system("cls");
-    cout << "\n\n\n\t\t\t\t- Presented by Group 3 -\n\n";
+    cout << "\n\n\n\t\t\t\t   - Presented by Group 3 -\n\n";
     cout << "\t\t\t|--------------------------------------------|" << endl;
     cout << "\t\t\t|                Logging out                 |" << endl;
     cout << "\t\t\t|--------------------------------------------|";
