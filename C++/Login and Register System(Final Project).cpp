@@ -21,12 +21,13 @@ void decrement();
 void logout();
 void loading();
 
-int main(){
+int main() {
     int choice;
-
+    
     cout << "\t\t\t_________________________________________________" << endl;
+    cout << "\t\t\t|----------- Presented  by  Group  3 -----------|" << endl;
     cout << "\t\t\t|                   Main Page                   |" << endl;
-    cout << "\t\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t\t|===============================================|" << endl;
     cout << "\t\t\t|                                               |" << endl;
     cout << "\t\t\t| 1 :Register                                   |" << endl;
     cout << "\t\t\t| 2 :Login                                      |" << endl;
@@ -55,7 +56,7 @@ int main(){
         cout << "\t\t\t|         You enter an invalid choice!           |" << endl;
         cout << "\t\t\t|------------------------------------------------|" << endl;
         return 0;
-    } 
+    }
 }
 
 void Register() {
@@ -101,12 +102,12 @@ void Register() {
             return;
         }
     }
-    
+
     ofstream file;
     file.open(username + ".txt");
     file << username << endl << password;
     file.close();
-    
+
     loading();
     cout << "\t\t\t|-----------------------------------------------|" << endl;
     cout << "\t\t\t|            Successfully Registered            |" << endl;
@@ -173,7 +174,8 @@ bool IsloggedIn() {
 
     if (un == username && pw == password) {
         return true;
-    } else {
+    }
+    else {
         return false;
     }
 }
@@ -236,8 +238,8 @@ void ForgotPass() {
 }
 
 void archive() {
-    int choice;
     cout << "\t\t\t__________________________________________________" << endl;
+    cout << "\t\t\t|------------- Presented by Group 3 -------------|" << endl;
     cout << "\t\t\t|               Activities Archive               |" << endl;
     cout << "\t\t\t|------------------------------------------------|" << endl;
     cout << "\t\t\t|1. Display Hello World                          |" << endl;
@@ -251,6 +253,7 @@ void archive() {
     cout << "\t\t\t|9. Logout                                       |" << endl;
     cout << "\t\t\t|================================================|" << endl;
 
+    int choice;
     cout << "\n\t\t\tEnter your choice: ";
     cin >> choice;
 
@@ -264,34 +267,34 @@ void archive() {
         house();
         break;
     case 3:
-        loading(); 
+        loading();
         lownum();
         break;
     case 4:
-        loading(); 
+        loading();
         highnum();
         break;
     case 5:
-        loading(); 
+        loading();
         avecal();
         break;
     case 6:
-        loading(); 
+        loading();
         cal();
         break;
     case 7:
-        loading(); 
+        loading();
         increment();
         break;
     case 8:
-        loading(); 
+        loading();
         decrement();
         break;
-    case 9: 
+    case 9:
         logout();
         break;
     default:
-        loading(); 
+        loading();
         cout << "\t\t\t|------------------------------------------------|" << endl;
         cout << "\t\t\t|         You enter an invalid choice!           |" << endl;
         cout << "\t\t\t|------------------------------------------------|" << endl;
@@ -387,7 +390,7 @@ void lownum() {
     cout << "\t\t\t|-----------------------------------------------|" << endl;
     cout << "\t\t\t|            Find the Lowest Number             |" << endl;
     cout << "\t\t\t|-----------------------------------------------|" << endl;
-    
+
     int A, B, C, D;
     cout << "\n\t\t\tEnter a 1st number: ";
     cin >> A;
@@ -407,13 +410,13 @@ void lownum() {
         cout << A << " IS THE LOWEST NUMBER\n";
     }
     else if (B <= A && B <= C && B <= D) {
-        cout  << B << " IS THE LOWEST NUMBER\n";
+        cout << B << " IS THE LOWEST NUMBER\n";
     }
     else if (C <= A && C <= B && C <= D) {
         cout << C << " IS THE LOWEST NUMBER\n";
     }
     else
-        cout  << D << " IS THE LOWEST NUMBER\n";
+        cout << D << " IS THE LOWEST NUMBER\n";
 
     Sleep(1000);
 
@@ -661,7 +664,7 @@ void increment() {
 
     cout << "\n\t\t\tEnter a number: ";
     cin >> num;
-    
+
     for (int i = 0; i <= num; i++) {
         cout << "\t\t\t" << i << endl;
     }
@@ -705,8 +708,8 @@ void decrement() {
 
     cout << "\n\t\t\tEnter a number: ";
     cin >> num;
-    while (num >= 0){
-        
+    while (num >= 0) {
+
         cout << "\t\t\t" << num << endl;
         num--;
     }
@@ -740,7 +743,7 @@ void decrement() {
     }
 }
 
-void logout() {   
+void logout() {
     system("cls");
     cout << "\n\n\n\t\t\t\t   - Presented by Group 3 -\n\n";
     cout << "\t\t\t|--------------------------------------------|" << endl;
