@@ -112,6 +112,7 @@ void Register() {
     cout << "\t\t\t|-----------------------------------------------|" << endl;
     cout << "\t\t\t|            Successfully Registered            |" << endl;
     cout << "\t\t\t|-----------------------------------------------|" << endl;
+    cout << "\t\t\t          ";
     system("pause");
     loading();
     main();
@@ -187,7 +188,7 @@ void ForgotPass() {
     cout << "\t\t\t|                 Forgot Password               |" << endl;
     cout << "\t\t\t|-----------------------------------------------|" << endl;
 
-    cout << "\n\t\t\tEnter username :";
+    cout << "\n\t\t\tEnter username: ";
     cin >> username;
 
     cout << "\n\t\t\tEnter your new password: ";
@@ -232,7 +233,9 @@ void ForgotPass() {
     cout << "\t\t\t|------------------------------------------------|" << endl;
     cout << "\t\t\t|        Successfully Change the Password        |" << endl;
     cout << "\t\t\t|------------------------------------------------|" << endl;
+    cout << "\t\t\t          ";
     system("pause");
+    
     loading();
     main();
 }
@@ -302,7 +305,6 @@ void archive() {
         archive();
     }
 }
-
 
 void helloworld() {
     cout << "\t\t\t|------------------------------------------------|" << endl;
@@ -768,16 +770,20 @@ void logout() {
 
 void loading() {
     system("cls");
-    cout << "\n\n\n\t\t\t\t- Presented by Group 3 -\n\n";
-    cout << "\n\t\t\t\tPlease wait while loading\n\n";
+
+    cout << "\n\n\n\t\t\t|---------------------------------------------|" << endl;
+    cout << "\t\t\t|             Presented by Group 3            |" << endl;
+    cout << "\t\t\t|---------------------------------------------|\n\n";
+    cout << "\n\t\t\t\t    Please wait while loading\n\n";
     char a = 177, b = 219;
+    cout << "\r";
     cout << "\t\t\t\t";
-    for (int i = 0; i <= 24; i++) {
+    for (int i = 0; i <= 31; i++) {
         cout << a;
     }
     cout << "\r";
     cout << "\t\t\t\t";
-    for (int i = 0; i <= 23; i++)
+    for (int i = 0; i <= 30; i++)
     {
         Sleep(50);
         cout << b;
