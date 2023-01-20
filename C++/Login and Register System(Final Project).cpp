@@ -157,7 +157,7 @@ void Login() {
 }
 
 bool IsloggedIn() {
-    string username, password, un, pw;
+    string username, password, usercheck, passcheck;
 
     cout << "\t\t\t|---------------------------------------------|" << endl;
     cout << "\t\t\t|                    Login                    |" << endl;
@@ -170,10 +170,10 @@ bool IsloggedIn() {
     cin >> password;
 
     ifstream read(username + ".txt");
-    getline(read, un);
-    getline(read, pw);
+    getline(read, usercheck);
+    getline(read, passcheck);
 
-    if (un == username && pw == password) {
+    if (usercheck == username && passcheck == password) {
         return true;
     }
     else {
@@ -771,22 +771,26 @@ void logout() {
 void loading() {
     system("cls");
 
-    cout << "\n\n\n\t\t\t|---------------------------------------------|" << endl;
-    cout << "\t\t\t|             Presented by Group 3            |" << endl;
-    cout << "\t\t\t|---------------------------------------------|\n\n";
-    cout << "\n\t\t\t\t    Please wait while loading\n\n";
-    char a = 177, b = 219;
-    cout << "\r";
-    cout << "\t\t\t\t";
-    for (int i = 0; i <= 31; i++) {
-        cout << a;
-    }
-    cout << "\r";
-    cout << "\t\t\t\t";
-    for (int i = 0; i <= 30; i++)
-    {
-        Sleep(50);
-        cout << b;
+    string spaces = " ";
+
+    for (int i = 0; i < 57; i++) {
+        //Sleep(50);
+
+        cout << "\n\n\n\t\t\t|----------------------------------------|" << endl;
+        cout << "\t\t\t|          Presented by Group 3          |" << endl;
+        cout << "\t\t\t|----------------------------------------|\n\n";
+
+        cout << spaces << "\t\t       |-----\\\n";
+        cout << spaces << "\t\t|------|  [ ] \\___\n";
+        cout << spaces << "\t\t|                 \\\n";
+        cout << spaces << "\t\t\\--(0)------(0)---/\n";
+        cout << "\t\t|-------------------------------------------------|---|" << endl;
+        cout << "\t\t|- - - - - - - - - - - - - - - - - - - - - - - - -|END|" << endl;
+        cout << "\t\t|-------------------------------------------------|---|" << endl;
+        cout << "\t\t\\************* PLEASE WAIT WHILE LOADING *************/" << endl;
+        Sleep(45);
+        system("cls");
+        spaces += " ";
     }
     system("cls");
 }
