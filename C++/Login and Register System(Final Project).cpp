@@ -23,15 +23,15 @@ void loading();
 
 int main() {
     int choice;
-    
+
     cout << "\t\t\t_________________________________________________" << endl;
     cout << "\t\t\t|----------- Presented  by  Group  3 -----------|" << endl;
     cout << "\t\t\t|                   Main Page                   |" << endl;
     cout << "\t\t\t|===============================================|" << endl;
     cout << "\t\t\t|                                               |" << endl;
-    cout << "\t\t\t| 1 :Register                                   |" << endl;
-    cout << "\t\t\t| 2 :Login                                      |" << endl;
-    cout << "\t\t\t| 3 :Forgot Password                            |" << endl;
+    cout << "\t\t\t| [1] Register                                   |" << endl;
+    cout << "\t\t\t| [2] Login                                      |" << endl;
+    cout << "\t\t\t| [3] Forgot Password                            |" << endl;
     cout << "\t\t\t|                                               |" << endl;
     cout << "\t\t\t|===============================================|" << endl;
     cout << "\n\t\t\tEnter your choice: ";
@@ -235,7 +235,7 @@ void ForgotPass() {
     cout << "\t\t\t|------------------------------------------------|" << endl;
     cout << "\t\t\t          ";
     system("pause");
-    
+
     loading();
     main();
 }
@@ -245,15 +245,17 @@ void archive() {
     cout << "\t\t\t|------------- Presented by Group 3 -------------|" << endl;
     cout << "\t\t\t|               Activities Archive               |" << endl;
     cout << "\t\t\t|------------------------------------------------|" << endl;
-    cout << "\t\t\t|1. Display Hello World                          |" << endl;
-    cout << "\t\t\t|2. Display House                                |" << endl;
-    cout << "\t\t\t|3. Lower Number Identifier                      |" << endl;
-    cout << "\t\t\t|4. Higher Number Identifier                     |" << endl;
-    cout << "\t\t\t|5. Average Calculator with equivalent grade     |" << endl;
-    cout << "\t\t\t|6. Calculator                                   |" << endl;
-    cout << "\t\t\t|7. Increment looping                            |" << endl;
-    cout << "\t\t\t|8. Decrement looping                            |" << endl;
-    cout << "\t\t\t|9. Logout                                       |" << endl;
+    cout << "\t\t\t|                                                |" << endl;
+    cout << "\t\t\t| [1] Display Hello World                        |" << endl;
+    cout << "\t\t\t| [2] Display House                              |" << endl;
+    cout << "\t\t\t| [3] Lower Number Identifier                    |" << endl;
+    cout << "\t\t\t| [4] Higher Number Identifier                   |" << endl;
+    cout << "\t\t\t| [5] Average Calculator with equivalent grade   |" << endl;
+    cout << "\t\t\t| [6] Calculator                                 |" << endl;
+    cout << "\t\t\t| [7] Increment looping                          |" << endl;
+    cout << "\t\t\t| [8] Decrement looping                          |" << endl;
+    cout << "\t\t\t| [9] Logout                                     |" << endl;
+    cout << "\t\t\t|                                                |" << endl;
     cout << "\t\t\t|================================================|" << endl;
 
     int choice;
